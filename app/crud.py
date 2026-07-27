@@ -1,0 +1,26 @@
+from sqlalchemy.orm import Session
+from app.models import User
+from app.schema import UserCreate
+
+
+def create_user(db: Session, user: UserCreate):
+
+    db_user = User(
+        username=user.username,
+        age=user.age,
+        email=user.email,
+        phone=user.phone
+    )
+
+    db.add(db_user)
+
+    db.commit()
+
+    db.refresh(db_user)
+
+    return db_user
+
+
+def get_users(db: Session):
+
+    return db.query(User).all()
