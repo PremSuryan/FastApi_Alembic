@@ -21,7 +21,7 @@ numbers = [2, 5, 8, 10, 14, 20, 25, 31]
 target = 20
 
 left = 0
-right = 0
+right = len(numbers)-1
 
 middle = left + right // 2
 

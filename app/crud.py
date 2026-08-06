@@ -13,6 +13,7 @@ def create_user(db: Session, user: UserCreate):
     )
 
     db.add(db_user)
+    
 
     db.commit()
 
