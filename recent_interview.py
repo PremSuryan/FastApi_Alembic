@@ -13,6 +13,6 @@ out.extend(matrix[0])
 out.extend([matrix[1][-1]])
 out.extend(matrix[2][2:]+matrix[2][0:2])
 out.extend(matrix[1][0:3]+matrix[3])
-
+    
 print(out)
 

@@ -4,9 +4,9 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.schema import UserCreate
+from app.schema import UserCreate, UserLogin
 from app.crud import create_user
-from app.crud import get_users
+from app.crud import get_users, user_login
 
 router = APIRouter(prefix="/users")
 
@@ -26,3 +26,12 @@ def read_users(
 ):
 
     return get_users(db)
+
+
+@router.post("/")
+async def login(
+    user_details:UserLogin,
+    db : Session = Depends(get_db)
+):
+    result = await user_login(user_details,db)
+    return result
