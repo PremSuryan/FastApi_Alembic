@@ -19,7 +19,7 @@ for i in range(len(nums)):
             left += 1
         left += 1
                 
-# print(out)
+print(out)
 sequence = [arr for arr in out if all( arr[i]+1==arr[i+1] for i in range(len(arr)-1))]
 res = min(sequence ,key=len)
 print(res)

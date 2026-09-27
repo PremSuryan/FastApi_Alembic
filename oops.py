@@ -23,6 +23,28 @@ class Cat(Animal):
         pass
 
 
-cat = Cat("JD", True, "male", 2026)
-cat.eat()
-cat.sleep()
+# cat = Cat("JD", True, "male", 2026)
+# cat.eat()
+# cat.sleep()
+
+class Father:
+    def father_skill(self):
+        print("I can drive")
+
+
+class Mother:
+    def mother_skill(self):
+        print("I can cook")
+
+
+class Child(Mother,Father):
+    def child_skill(self):
+        print("I can play")
+
+
+child = Child()
+
+# child.father_skill()
+# child.mother_skill()
+# child.child_skill()
+print(Child.__mro__)

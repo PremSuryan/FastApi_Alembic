@@ -25,5 +25,8 @@ matrix = [
 # print(res)
 
 #given below is the correct 
+print(zip(*matrix))
+for i in zip(*matrix):
+    print(i)
 res = [list(x) for x in zip(*matrix)]
 print(res)

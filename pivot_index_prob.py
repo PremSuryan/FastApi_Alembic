@@ -21,6 +21,8 @@ arr = [2, 3, 13, 15, 21, 10, 1, 0, 5]
 
 pivot = 10
 
+#Method 1:
+
 # Move pivot to the end
 pivot_index = arr.index(pivot)
 arr[pivot_index], arr[-1] = arr[-1], arr[pivot_index]
@@ -44,4 +46,11 @@ while left <= right:
 # Place the pivot in its correct position
 arr[left], arr[-1] = arr[-1], arr[left]
 
+print(arr)
+
+
+#Method 2:
+find_index = arr.index(pivot)
+pop_index_value = arr.pop(find_index)
+arr.append(pop_index_value)
 print(arr)
