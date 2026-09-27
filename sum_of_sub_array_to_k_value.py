@@ -23,9 +23,16 @@ def sub_array(arr,k):
 
 print(sub_array(arr2,k2))
 
-new_arr = [1, 2, 3, 4, 5, 6, 7, 8]
+new_arr = [1, 2, 3, 4, 5, 6, 7, 8,9]
 k = 3
 
-subarrays = [new_arr[i:i + len(new_arr)//k] for i in range(0, len(new_arr), len(new_arr)//k)]
+for i in range(0, len(new_arr), k):
+    new = new_arr[i:i + k]
+    print(new)
+
+
+subarrays = [new_arr[i:i + k] for i in range(0, len(new_arr), k)]
 
 print(subarrays)
+
+
