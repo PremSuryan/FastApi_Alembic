@@ -1,6 +1,4 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
+from sqlalchemy import String,ForeignKey,Integer,Column
 
 from app.database import Base
 
@@ -18,3 +16,11 @@ class User(Base):
     email = Column(String)
 
     phone = Column(String)
+
+
+class Role(Base):
+    __tablename__ = 'Role'
+
+    role = Column(String)
+    role_id = ForeignKey(column=User.id)
+    access_department = Column(String)

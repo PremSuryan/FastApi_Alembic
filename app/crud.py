@@ -1,10 +1,13 @@
 import jwt
 import secrets
 from datetime import datetime, timedelta, timezone
+
 from sqlalchemy.orm import Session
+
 from app.models import User
 from app.schema import UserCreate, UserLogin
 
+from kafka import KafkaProducer
 
 SECRET_KEY = secrets.token_hex(32)
 ALGORITHM = "HS256"
@@ -48,6 +51,10 @@ async def user_login(user, db):
     )
 
     to_encode.update({"exp":expire,"type":"access"})
+
+
+async def file_processing(files):
+    producer = KafkaProducer(bootstrap_servers="localhost:9092",)
 
     
 
